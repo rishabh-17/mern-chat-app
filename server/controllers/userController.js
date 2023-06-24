@@ -57,11 +57,19 @@ exports.setAvatar= async (req, res, next) => {
   try {
     const id = req.params.id
     const avatarImage = req.body.avatarImage
-    const user = await User.findOne({_id: id})
-    user.isAvatarImageSet = true;
-    user.avatarImage = avatarImage;
-    user.save();
+    const user = await User.findByIdAndUpdate(id,{
+      isAvatarImageSet : true,
+      avatarImage : avatarImage
+    }, {new:true})
+
+    return res.json({isSet: user.isAvatarImageSet, avatarImage: user.avatarImage})
   } catch (error) {
     next(error);
   }
 }
+
+exports.getAll = (req, res, next) =>{
+  const users = User.find()
+  console.log(users)
+  res.json({users :users})
+} 

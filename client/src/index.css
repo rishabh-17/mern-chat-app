@@ -5,9 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(8, 31, 66);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+form {
+  background-color: rgb(10, 10, 58);
+  overflow: hidden;
+ 
+}
+
+.avatar {
+  background-color: rgb(10, 10, 58);
+  overflow: hidden;
+}
+

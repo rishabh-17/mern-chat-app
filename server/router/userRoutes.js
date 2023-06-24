@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.post('/register', userController.register)
 router.post('/login', userController.login)
-router.post('/setavatar', userController.setAvatar)
+router.post('/setavatar/:id', userController.setAvatar)
+router.get('/getall', userController.getAll)
 
 module.exports = router;
