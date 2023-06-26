@@ -68,8 +68,29 @@ exports.setAvatar= async (req, res, next) => {
   }
 }
 
-exports.getAll = (req, res, next) =>{
-  const users = User.find()
-  console.log(users)
-  res.json({users :users})
-} 
+exports.getAll = async (req, res, next) =>{
+  try {
+    const id = req.params.id;
+    const users = await User.find({ _id: { $ne: id } }).select([
+      "email",
+      "username",
+      "avatarImage",
+      "_id",
+    ]);
+    return res.json(users);
+  } catch (ex) {
+    next(ex);
+  }
+};
+
+
+
+module.exports.logOut = (req, res, next) => {
+  try {
+    if (!req.params.id) return res.json({ msg: "User id is required " });
+    onlineUsers.delete(req.params.id);
+    return res.status(200).send();
+  } catch (ex) {
+    next(ex);
+  }
+};

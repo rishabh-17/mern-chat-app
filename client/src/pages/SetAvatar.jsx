@@ -9,6 +9,12 @@ import axios from "axios";
 export default function SetAvatar() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/");
+    }
+  }, []);
+
   const image = "https://api.multiavatar.com";
   const [loading, setloading] = useState(false);
   const [selected, setselected] = useState(undefined);

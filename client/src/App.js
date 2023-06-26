@@ -2,8 +2,8 @@ import React from 'react'
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Register from './pages/Register';
 import Login from './pages/Login';
-import Chat from './pages/Chat';
 import SetAvatar from './pages/SetAvatar';
+import Chat from './pages/Chat';
 
 export default function App() {
   return (
