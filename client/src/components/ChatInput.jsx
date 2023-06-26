@@ -27,7 +27,7 @@ export default function ChatInput({ handleSendMsg }) {
   return (
     <>
     <div className="row ">
-       <div className="button-container col-1">
+       <div className="button-container col-1 ">
         <div className="emoji btn btn-info py-2 px-4" onClick={handleEmojiPickerhideShow}>
           <BsEmojiSmileFill />
           {showEmojiPicker && <div className=""><Picker onEmojiClick={handleEmojiClick} /></div>}

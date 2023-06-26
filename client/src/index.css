@@ -37,5 +37,37 @@ form {
 .chat {
   height: 100vh;
   width:100vw
+  
 }
 
+.bottom {
+  position: fixed;
+  min-width : 62vw;
+  bottom: 0;
+  margin-bottom: 10vh;
+}
+
+.chat-messages {
+  overflow-y: scroll;
+  max-height: 58vh;
+  width: 64vw;
+  overflow-x: hidden;
+
+}
+
+/* .chat-header {
+  background-color: rgba(180, 180, 197, 0.485);
+} */
+
+.contact {
+  background-color: rgba(180, 180, 197, 0.485);
+  
+
+}
+
+.current-user {
+  position: fixed;
+  min-width : 15vw;
+  bottom: 0;
+  margin-bottom: 10vh;
+}

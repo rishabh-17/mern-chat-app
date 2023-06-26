@@ -75,12 +75,12 @@ setUser()
   return (
     <>
       <div className="chat-header row p-2 ">
-        <div className="user-details d-flex p-2 col-11">
+        <div className="user-details d-flex p-2 col-11 " >
           <div className="avatar">
             <img
               src={`${image}/${currentChat.avatarImage}.png`}
               alt=""
-              width={"70px"}
+              width={"50px"}
             />
           </div>
           <div className="username my-auto mx-3">
@@ -91,16 +91,16 @@ setUser()
         <Logout />
         </div>
       </div>
-      <div className="chat-messages">
+      <div className="chat-messages pt-3">
         {messages.map((message) => {
           return (
             <div ref={scrollRef} key={uuidv4()}>
               <div
-                className={`message ${
+                className={`message shadow mx-5 ${
                   message.fromSelf ? "sended" : "recieved"
                 }`}
               >
-                <div className="content ">
+                <div className="content my-2">
                   <p>{message.message}</p>
                 </div>
               </div>

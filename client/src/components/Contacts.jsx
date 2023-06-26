@@ -34,7 +34,7 @@ export default function Contacts({ contacts, changeChat }) {
               return (
                 <div
                   key={contact._id}
-                  className={`contact d-flex p-3 gap-3 border-info border-bottom border-top ${
+                  className={`contact d-flex p-2 gap-3 my-1 ${
                     index === currentSelected ? "selected" : ""
                   }`}
                   onClick={() => changeCurrentChat(index, contact)}
@@ -44,6 +44,7 @@ export default function Contacts({ contacts, changeChat }) {
                       src={`${image}/${contact.avatarImage}.png`}
                       alt=""
                       width={"50px"}
+                      className="rounded contact-image"
                     />
                   </div>
                   <div className="username justify-content-center align-items-center ">
@@ -53,18 +54,18 @@ export default function Contacts({ contacts, changeChat }) {
               );
             })}
           </div>
-          {/* <div className="current-user align-item-center  ">
-            <div className="avatar">
+          <div className="current-user d-flex gap-4 border-top pt-3">
+            <div className="avatar ">
               <img
                 src={`${image}/${currentUserImage}.png`}
                 alt="avatar"
-                width={"60px"}
+                width={"50px"}
               />
             </div>
             <div className="username">
               <h2>{currentUserName}</h2>
             </div>
-          </div> */}
+          </div>
         </div>
       )}
     </div>

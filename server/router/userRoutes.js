@@ -6,5 +6,6 @@ router.post('/register', userController.register)
 router.post('/login', userController.login)
 router.post('/setavatar/:id', userController.setAvatar)
 router.get('/allusers/:id', userController.getAll)
+router.get("/logout/:id", userController.logOut);
 
 module.exports = router;

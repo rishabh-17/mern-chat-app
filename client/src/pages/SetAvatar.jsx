@@ -10,7 +10,7 @@ export default function SetAvatar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
+    if (!localStorage.getItem("chat-app-user")) {
       navigate("/");
     }
   }, []);
